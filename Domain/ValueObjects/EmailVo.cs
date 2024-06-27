@@ -1,14 +1,22 @@
 ﻿using Domain.Exceptions;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.ValueObjects;
 
 public class EmailVo
 {
-    public EmailVo(string address)
+    public EmailVo() { }
+
+    public EmailVo(Guid id, string address)
     {
+        Id = id;
         Address = address;
+
         Validate();
     }
+
+    [Key]
+    public Guid Id { get; private set; }
 
     public string Address { get; private set; }
 

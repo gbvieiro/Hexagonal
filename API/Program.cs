@@ -50,16 +50,16 @@ void DataInit(IApplicationBuilder app)
 
         if (!context.Users.Any())
         {
-            var mariaName = new NameVo("Maria", "da Silva");
-            var mariaEmail = new EmailVo("maria.silva @example.com");
+            var mariaName = new NameVo(Guid.NewGuid(), "Maria", "da Silva");
+            var mariaEmail = new EmailVo(Guid.NewGuid(), "maria.silva @example.com");
             var maria = new User(Guid.NewGuid(), mariaName, mariaEmail);
 
-            var joaoName = new NameVo("João", "Pereira");
-            var joaoEmail = new EmailVo("joao.pereira@example.com");
+            var joaoName = new NameVo(Guid.NewGuid(), "João", "Pereira");
+            var joaoEmail = new EmailVo(Guid.NewGuid(), "joao.pereira@example.com");
             var joao = new User(Guid.NewGuid(), joaoName, joaoEmail);
 
-            var anaName = new NameVo("Ana", "Souza");
-            var anaEmail = new EmailVo("ana.souza@example.com");
+            var anaName = new NameVo(Guid.NewGuid(), "Ana", "Souza");
+            var anaEmail = new EmailVo(Guid.NewGuid(), "ana.souza@example.com");
             var ana = new User(Guid.NewGuid(), anaName, anaEmail);
 
             context.Users.AddRange(maria, ana, joao);

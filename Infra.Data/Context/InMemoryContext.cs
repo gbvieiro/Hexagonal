@@ -11,6 +11,13 @@ public class InMemoryContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.OwnsOne(e => e.Name);
+            entity.OwnsOne(e => e.Email);
+        });
+
         base.OnModelCreating(modelBuilder);
     }
 }

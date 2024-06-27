@@ -9,6 +9,8 @@ public sealed class User
     public NameVo? Name { get; private set; }
     public EmailVo? Email { get; private set; }
 
+    public User() { }
+
     public User(Guid id, NameVo name, EmailVo email)
     {
         Id = id;
